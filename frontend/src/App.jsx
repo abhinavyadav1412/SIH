@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-// import './App.css'
+import React from "react";
+import Navbar from "./components/Navbar";
+import Landing from "./components/Landing";
+
+import LocomotiveScroll from 'locomotive-scroll';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const locomotiveScroll = new LocomotiveScroll();
   return (
-    <>
-    <div>Helloworld</div>
-    </>
-  )
+    <div className="h-screen w-full ">
+      <Navbar />
+      <Landing />
+    
+    </div>
+  );
 }
 
-export default App
+export default App;
