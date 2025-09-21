@@ -1,43 +1,17 @@
-import { motion } from "framer-motion";
-import { Power4 } from "gsap/all";
-import React from "react";
-import { IoMenu } from "react-icons/io5";
+import React, { forwardRef } from "react";
+import Logo from "../assets/ayuchain.png";
+import HeaderButton from "./HeaderButton";
 
-function Navbar() {
+const Navbar = forwardRef((props, ref) => {
+  const { setElementHovered } = props;
   return (
-    <div className="w-full fixed z-[999]">
-      <div className="max-w-screen-xl mx-auto text-black py-4 sm:py-10 sm:px-6 px-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ ease: Power4.easeInOut, duration: 1.2 }}
-          className="logo flex items-center justify-between"
-        >
-          
-          <h1 className="text-2xl font-bold tracking-wide">
-            AYUCHAIN
-          </h1>
-
-          
-          <span className="text-lg sm:hidden">
-            <IoMenu />
-          </span>
-
-          {/* Navbar links */}
-          <div className="links hidden sm:flex gap-6">
-            {["Work", "Studio", "News", "Contact"].map((item, index) => (
-              <a
-                key={index}
-                className="text-sm cursor-pointer hover:underline"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-        </motion.div>
+    <div className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center mx-auto max-w-screen-2xl py-6 px-6 sm:px-10">
+      <img className="w-[15vw]" src={Logo} alt="AyuChain Logo" />
+      <div className="text-white flex gap-2">
+        <HeaderButton setElementHovered={setElementHovered} ref={ref} />
       </div>
     </div>
   );
-}
+});
 
 export default Navbar;
