@@ -5,6 +5,7 @@ import Marquee from "./components/Marquee";
 
 
 import { useScroll } from "framer-motion";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
       <Navbar setElementHovered={setElementHovered} ref={stickyElement} />
       <Hero scrollYProgress={scrollYProgress} />
       <Marquee/>
-     
+     <Footer/>
     </div>
   );
 };
