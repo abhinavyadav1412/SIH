@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import About from "./components/About";
+import StickyCursor from "./components/StickyCursor";
 
 
 import { useScroll } from "framer-motion";
@@ -25,9 +26,13 @@ const App = () => {
     >
       <Navbar setElementHovered={setElementHovered} ref={stickyElement} />
       <Hero scrollYProgress={scrollYProgress} />
-      <Marquee/>
       <About/>
-     <Footer/>
+      <Marquee/>
+      <Footer/>
+      <StickyCursor
+        elementHovered={elementHovered}
+        stickyElement={stickyElement}
+      />
     </div>
   );
 };
