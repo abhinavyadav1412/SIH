@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
+import About from "./components/About";
 
 
 import { useScroll } from "framer-motion";
@@ -25,6 +26,7 @@ const App = () => {
       <Navbar setElementHovered={setElementHovered} ref={stickyElement} />
       <Hero scrollYProgress={scrollYProgress} />
       <Marquee/>
+      <About/>
      <Footer/>
     </div>
   );
